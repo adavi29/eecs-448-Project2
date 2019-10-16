@@ -23,7 +23,6 @@ Board::Board()
     }
   }
 }
-
 void Board::setPos(int xPos,int yPos, char val)
   {
     mapp[xPos][yPos] = val;

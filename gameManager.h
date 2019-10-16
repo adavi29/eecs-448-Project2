@@ -65,6 +65,12 @@ class gameManager
 
     */
     void gameOver(Player winner);
+      
+    void aiTurn(Player &ai, Player &opponent);
+
+
+      bool inAiMode;
+      int aiLevel;
 
 };
 #endif
