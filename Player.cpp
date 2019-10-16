@@ -758,7 +758,7 @@ string Player::aiMedium(Board enemyBoard)
 
     return NumtoStrAF(randomRow) + NumtoStr18(randomCol);
   }
-
+}
 
 void Player::setShipHasBeenSunk(bool value){
     shipHasBeenSunk=value;
@@ -769,5 +769,4 @@ bool Player::getShipHasBeenSunk(){
 
 int Player::getScore(){
 		return score;
-
 }
