@@ -21,5 +21,6 @@ class Animations{
    void playSunk();
    void playP1Wins();
    void playP2Wins();
+   void playAIWins();
 };
 #endif

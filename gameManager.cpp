@@ -124,6 +124,7 @@ void gameManager::gameLoop()
         system("clear");
         while(!p1.isDead() && !p2.isDead())
         {
+            turnCounter++;
             system("clear");
             cout << "Press any key(AND ENTER) to begin Player 1's turn: \n";
             cin >> s;
@@ -332,7 +333,7 @@ void gameManager::gameOver(Player winner)
     }
     else if(winner.getName() == "Player AI")
     {
-        cout<< "\nPlayer AI Wins!\n";
+        animations.playAIWins();
     }
     else
     {
