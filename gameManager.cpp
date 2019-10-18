@@ -108,6 +108,7 @@ void gameManager::gameLoop()
 
     if(inAiMode==false)//player 1 and 2 game play
     {
+				turnCounter =0;
         string s = "";
         cout<< "Player 1, Set Your Ships!\n";
         Player p1(numOfShips,"Player 1");
