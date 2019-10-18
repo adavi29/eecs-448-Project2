@@ -689,14 +689,20 @@ string Player::aiMedium(Board enemyBoard)
   int col = 0;
 
   //looks through array to find a 1
+    bool endLoop=false;
   for(int i = 0;i < 8;i ++){
     for(int j = 0;j < 8;j++){
       if(aiMediumArray[i][j] == "1"){
         nextShot = true;
         row = i;
         col = j;
+          endLoop=true;
         break;
       }
+        if(endLoop==true)
+        {
+            break;
+        }
     }
   }
 
@@ -704,25 +710,26 @@ string Player::aiMedium(Board enemyBoard)
   {
     if(enemyBoard.getPos(row, col) == 's'){
       aiMediumArray[row][col] = "h";
-      if(row + 1 < 8 && aiMediumArray[row+1][col] != "h" && aiMediumArray[row+1][col] != "m"){
+      if((row + 1) < 8 && aiMediumArray[row+1][col] != "h" && aiMediumArray[row+1][col] != "m"){
         aiMediumArray[row+1][col] = "1";
       }
-      else if(row -1 >= 0 && aiMediumArray[row-1][col] != "h" && aiMediumArray[row-1][col] != "m")
+      if((row -1) >= 0 && aiMediumArray[row-1][col] != "h" && aiMediumArray[row-1][col] != "m")
       {
         aiMediumArray[row-1][col] = "1";
       }
-      else if(col + 1 < 8 && aiMediumArray[row][col+1] != "h" && aiMediumArray[row][col+1] != "m")
+      if((col + 1) < 8 && aiMediumArray[row][col+1] != "h" && aiMediumArray[row][col+1] != "m")
       {
         aiMediumArray[row][col+1] = "1";
       }
-      else if(col - 1 >= 0 && aiMediumArray[row][col-1] != "h" && aiMediumArray[row][col-1] != "m"){
+      if((col - 1) >= 0 && aiMediumArray[row][col-1] != "h" && aiMediumArray[row][col-1] != "m"){
         aiMediumArray[row][col-1] = "1";
       }
     }else{
       aiMediumArray[row][col] = "m";
     }
-
-    return NumtoStrAF(row) + to_string(col);
+      string coordToPlaceShot=NumtoStrAF(col) + to_string(row+1);
+    return coordToPlaceShot;
+    //return to_string(col) + NumtoStrAF(row);
   }
   else//randomly picks a new shot
   {
@@ -730,34 +737,36 @@ string Player::aiMedium(Board enemyBoard)
     int randomRow = 0;
     int randomCol = 0;
     do{
-      randomRow = stoi(rand0to7());
-      randomCol = stoi(rand0to7());
+      randomRow = stoi(rand0to7())-1;
+      randomCol = stoi(rand0to7())-1;
 
     }while(!(aiMediumArray[randomRow][randomCol] != "h" && aiMediumArray[randomRow][randomCol] != "m"));
 
     if(enemyBoard.getPos(randomRow, randomCol) == 's'){
       aiMediumArray[randomRow][randomCol] = "h";
       //put 1s around the random shot.
-      if(randomRow + 1 < 8 && aiMediumArray[randomRow+1][randomCol] != "h" && aiMediumArray[randomRow+1][randomCol] != "m"){
+      if((randomRow + 1) < 8 && aiMediumArray[randomRow+1][randomCol] != "h" && aiMediumArray[randomRow+1][randomCol] != "m"){
         aiMediumArray[randomRow+1][randomCol] = "1";
       }
-      else if(randomRow - 1 >= 0 && aiMediumArray[randomRow-1][randomCol] != "h" && aiMediumArray[randomRow-1][randomCol] != "m")
+      if((randomRow - 1) >= 0 && aiMediumArray[randomRow-1][randomCol] != "h" && aiMediumArray[randomRow-1][randomCol] != "m")
       {
         aiMediumArray[randomRow-1][randomCol] = "1";
       }
-      else if(randomCol + 1 < 8 && aiMediumArray[randomRow][randomCol+1] != "h" && aiMediumArray[randomRow][randomCol+1] != "m")
+      if((randomCol + 1) < 8 && aiMediumArray[randomRow][randomCol+1] != "h" && aiMediumArray[randomRow][randomCol+1] != "m")
       {
         aiMediumArray[randomRow][randomCol+1] = "1";
       }
-      else if(randomCol - 1 >= 0 && aiMediumArray[randomRow][randomCol-1] != "h" && aiMediumArray[randomRow][randomCol-1] != "m"){
+      if((randomCol - 1) >= 0 && aiMediumArray[randomRow][randomCol-1] != "h" && aiMediumArray[randomRow][randomCol-1] != "m"){
         aiMediumArray[randomRow][randomCol-1] = "1";
       }
     }else{
       aiMediumArray[randomRow][randomCol] = "m";
     }
 
-    return NumtoStrAF(randomRow) + NumtoStr18(randomCol);
+    string coordToPlace=NumtoStrAF(randomCol) + NumtoStr18(randomRow);
+    return coordToPlace;
   }
+
 }
 
 void Player::setShipHasBeenSunk(bool value){
