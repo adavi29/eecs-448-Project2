@@ -270,7 +270,7 @@ Player::Player(int shipNums, int aiDifficulty, string aiName)
         Ship tempShip(i);
         ownShips[i-1] = tempShip;
     }
-    
+
     for(int i=0; i<8; i++)
     {
         for(int j=0; j<8; j++)
@@ -278,7 +278,7 @@ Player::Player(int shipNums, int aiDifficulty, string aiName)
             aiMediumArray[i][j]="";
         }
     }
-    
+
     //now we need to place the ships
     placeAiShips();
 }
@@ -444,7 +444,8 @@ void Player::placeAiShips()
     }
     while (!validX || !validY);
     ownShips[i].setPositions(xVal, yVal);
-    ownBoard.printBoard();
+		printf("AI has set ship %d!\n", i+1);
+  //  ownBoard.printBoard();
   }
 }
 
