@@ -327,10 +327,24 @@ void gameManager::gameOver(Player winner)
     if(winner.getName() == "Player 1")
     {
         animations.playP1Wins();
+        int finalScore = 0;
+        if(turnCounter > 0){
+            finalScore = winner.getScore()/turnCounter; //finalScore is 120 per hit, divided by the number of turns taken
+        }
+        score winnerscore(finalScore);
+        scoreBoard scoarBored;
+        scoarBored.readOldScores(winnerscore);
     }
     else if(winner.getName() == "Player 2")
     {
         animations.playP2Wins();
+        int finalScore = 0;
+        if(turnCounter > 0){
+            finalScore = winner.getScore()/turnCounter; //finalScore is 120 per hit, divided by the number of turns taken
+        }
+        score winnerscore(finalScore);
+        scoreBoard scoarBored;
+        scoarBored.readOldScores(winnerscore);
     }
     else if(winner.getName() == "Player AI")
     {
@@ -340,16 +354,6 @@ void gameManager::gameOver(Player winner)
     {
     cout<<"Whoops!  Something's not right here.\n";
     }
-
-		//for the AI versions, a check could be placed here like "if ((winner.getName() = "Player 2") && (gameMode != "singlePlayer"))"
-		int finalScore = 0;
-		if(turnCounter > 0){
-			finalScore = winner.getScore()/turnCounter; //finalScore is 120 per hit, divided by the number of turns taken
-		}
-		score winnerscore(finalScore);
-		scoreBoard scoarBored;
-		scoarBored.readOldScores(winnerscore);
-
   }
   exit(0);
 }
