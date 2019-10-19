@@ -1060,6 +1060,9 @@ void Animations::playP2Wins(){
 }
 
 void Animations::playAIWins(){
+  system("clear");
+  system("clear");
+    
   cout<<"       /\\\n";
   cout<<"      /  \\\n";
   cout<<"     /    \\\n";
