@@ -17,40 +17,33 @@ using namespace std;
 class score {
 
 public:
-	/*
-	pre:  none
-	param:  none
-	post:  creates score object w/o member variables declared
+	/**
+	@post creates score object w/o member variables declared
 	*/
 	score(){}
 
-	/*
-	pre:  none
-	param:  scoreTotal, which should come from a player object
-	post:  creates score object with scoreTotal; prompts user for initials
+	/**
+	@param  scoreTotal - player's score
+	@post creates score object with scoreTotal; prompts user for initials
 	*/
 	score(int scoreTotal);
 
-	/*
-	pre:  none
-	param:  needs initials and scoreTotal; won't prompt user for initials
-	post:  creates score object with initials and scoreTotal member variables defined
+	/**
+	@param  initials  - initials of the player
+     @param  scoreTotal - player's score
+	@post  creates score object with initials and scoreTotal member variables defined
 	*/
 	score(string initials, int scoreTotal);
 
-	/*
-	pre:  score object must have been constructed and initials declared
-	param:  none
-	post:  none
-	return:  returns the member variable  initials of a score
+	/**
+	@pre  score object must have been constructed and initials declared
+	@return  returns the member variable  initials of a score
 	*/
 	string getInitials();
 
-	/*
-	pre:  score object must have been constructed and scoreTotal member variable declared
-	param:  none
-	post:  none
-	return:  returns member variable scoreTotal integer
+	/**
+	@pre  score object must have been constructed and scoreTotal member variable declared
+	@return  returns member variable scoreTotal integer
 	*/
 	int getScoreTotal();
 
