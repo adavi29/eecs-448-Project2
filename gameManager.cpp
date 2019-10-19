@@ -357,10 +357,6 @@ void gameManager::gameOver(Player winner)
 void gameManager::aiTurn(Player &ai, Player &opponent)
 {
     cout << '\n';
-    cout<<"AI BOARD: \n";
-    ai.getBoard('o').printBoard(); //'o' represents "own board"
-    cout<<"\nTARGET BOARD: \n";
-    ai.getBoard('e').printBoard(); //'e' represents "enemy board"
     cout << '\n';
     int xVal =0;
     int yVal =0;
