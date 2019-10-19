@@ -23,7 +23,6 @@ Player::Player(int shipNums,string name)
       }
       placeShips();
       namee = name;
-      shipHasBeenSunk=false;
       score = 0;
   }
 Player::~Player()
@@ -231,9 +230,8 @@ ownBoard.setPos(yPos, xPos, 'h');
     if (ownShips[i].coordCheck(xPos, yPos))
     {
       ownShips[i].addHit();
-        if(ownShips[i].isSunk() && shipHasBeenSunk==false){
+        if(ownShips[i].isSunk() ){
             animations.playSunk();
-            shipHasBeenSunk=true;
         }
       break;
     }
@@ -768,13 +766,6 @@ string Player::aiMedium(Board enemyBoard)
     return coordToPlace;
   }
 
-}
-
-void Player::setShipHasBeenSunk(bool value){
-    shipHasBeenSunk=value;
-}
-bool Player::getShipHasBeenSunk(){
-    return shipHasBeenSunk;
 }
 
 int Player::getScore(){

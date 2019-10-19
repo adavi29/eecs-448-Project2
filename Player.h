@@ -46,8 +46,7 @@ class Player
         */
     void receiveHit(int xPos, int yPos);
     string getName();
-    void setShipHasBeenSunk(bool value);
-    bool getShipHasBeenSunk();
+
 
 		/* getter function for score varable
 		@pre player must have been constructed
@@ -83,7 +82,5 @@ class Player
     string aiMediumArray[8][8];
     int m_aiDifficulty;
 		int score; //a player gets 120 points per hit on an enemy ship
-    bool shipHasBeenSunk;
-
   };
 #endif
