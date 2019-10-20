@@ -26,7 +26,7 @@ class gameManager
      @post runs game and opens gameMenu until start is true.
     */
     void run();
-    char playerChoice;
+    string playerChoice;
     int turnCounter;
 
   private:

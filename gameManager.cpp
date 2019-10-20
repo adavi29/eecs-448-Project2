@@ -34,12 +34,12 @@ void gameManager::run()
 
 void gameManager::playerMenu()
 {
-  playerChoice = 'f';
-  char playerInput = ' ';
+  playerChoice = "f";
+  string playerInput = " ";
   cout << "\n===============================================================\n===============================================================\n";
   cout <<   "                  WELCOME TO BATTLESHIP!                       " << endl <<
             "===============================================================\n===============================================================\n";
-  while(start != true && !(isdigit(playerInput)))
+  while(start != true)
     {
       cout<< "\n1.) Start Game" << endl <<
       "2.) Set Number of Ships" << endl <<
@@ -48,19 +48,15 @@ void gameManager::playerMenu()
       cout<<">> ";
 
       cin >> playerInput;
-      /*if (playerInput.length() > 1)
-      {
-        cout<< "Input too long, just 1 character please!\n";
-      }*/
 
         playerChoice = playerInput;
 
 
-      if(playerChoice == '1')
+      if(playerChoice == "1")
         {
            start = true;
         }
-     else if(playerChoice == '2')
+     else if(playerChoice == "2")
        {
          do{
             cout << "Please input new number of ships to play (must be between 1 and 5): ";
@@ -77,12 +73,12 @@ void gameManager::playerMenu()
         cout<< "\nNumber of ships in game: " << numOfShips << endl;
 
        }
-    else if(playerChoice == '3')
+    else if(playerChoice == "3")
        {
          cout<<"Thanks for playing!" << endl;
          exit(0);
        }
-        else if(playerChoice == '4')
+        else if(playerChoice == "4")
         {
             inAiMode=true;
             do
