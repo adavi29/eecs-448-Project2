@@ -62,80 +62,71 @@ class Player
 
     //start runtimeTerrors methods
       /**
-       @param
-       @brief
-       @post
-       @return
+       @param number of ship, aiDifficulty, name of ai
+       @brief this the construtor for when the user wants to play against the ai. 
+       @post places ships on the ai board, sets the name of ai, set the aidifficulty
+       @return n/a
        */
       Player(int shipNums, int aiDifficulty, string aiName);//constructor for ai
       /**
-      @param
-      @brief
-      @post
-      @return
+      @brief randomly places ships on the ai board
+      @post the baord for ai is now filled with ships
+      @return N/A
       */
       void placeAiShips();
       /**
-      @param
-      @brief
-      @post
-      @return
+      @brief this method returns a string of where the ai will fire its next shot.
+      @post aiDifficulty = 2
+      @return a string of the next shot for ai
       */
       string aiEasy();
       /**
-      @param
-      @brief
-      @post
-      @return
+      @param Player 1's board of where the ships are placed.
+      @brief this method returns a string of where the ai will fire its next shot.
+      @post aiDifficulty = 2
+      @return a string of the next shot for ai
       */
       string aiMedium(Board enemyBoard);
       /**
-      @param
-      @brief
-      @post
-      @return
+      @param Player 1's board of where the ships are placed.
+      @brief this method returns a string of where the ai will fire its next shot.
+      @post aiDifficulty = 2
+      @return a string of the next shot for ai
       */
       string aiHard(Board enemyBoard);//hit the ememy's ship
       /**
-      @param
-      @brief
-      @post
-      @return
+      @brief random number between 0-7
+      @return a stirng of 0-7
       */
       string rand0to7();//use for ai coordinate selection
       /**
-      @param
-      @brief
-      @post
-      @return
+      @brief randomly picks 0 or 1
+      @post converts the number it picked to V or H
+      @return a string of V or H
       */
       string randVorH();//use for ai horizontal vs vertical selection; 0=v, 1=h
       /**
-      @param
-      @brief
-      @post
-      @return
+      @brief calcualtes a random number betweeen A-H
+      @return a string of 0-7 
       */
       string randAtoF();
       /**
-      @param
-      @brief
-      @post
-      @return
+      @param integer to be converted
+      @brief takes the number passed in and then returs
+      @post this method is used in the aiEasy, aiMedium, aiHard methods
+      @return the string value of the interger passed in.
       */
       string NumtoStrAF(int x);
       /**
-      @param
-      @brief
-      @post
-      @return
+      @param integer to be converted
+      @brief takes the number passed in and then returns a string value frome 1-8 for the game board.
+      @post this method is used in the aiEasy, aiMedium, aiHard methods
+      @return a string that is 1-8
       */
       string NumtoStr18(int x);
       /**
-      @param
-      @brief
-      @post
-      @return
+      @brief Gives the difficualty fo the AI
+      @return an integer of 1,2,3 
       */
       int getAiDifficulty();
 
