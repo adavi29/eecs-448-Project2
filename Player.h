@@ -55,14 +55,15 @@ class Player
 
     /**
 		@pre player must have been constructed
-		@param none
 		@return returns the player's member variable score
     */
     int getScore();
 
     //start runtimeTerrors methods
       /**
-       @param number of ship, aiDifficulty, name of ai
+       @param shipNums - number of ships
+       @param aiDifficulty - integer difficulty
+       @param aiName - name of the ai
        @brief this the construtor for when the user wants to play against the ai. 
        @post places ships on the ai board, sets the name of ai, set the aidifficulty
        @return n/a
@@ -81,14 +82,14 @@ class Player
       */
       string aiEasy();
       /**
-      @param Player 1's board of where the ships are placed.
+      @param enemyBoard - Player 1's board of where the ships are placed.
       @brief this method returns a string of where the ai will fire its next shot.
       @post aiDifficulty = 2
       @return a string of the next shot for ai
       */
       string aiMedium(Board enemyBoard);
       /**
-      @param Player 1's board of where the ships are placed.
+      @param enemyBoard - Player 1's board of where the ships are placed.
       @brief this method returns a string of where the ai will fire its next shot.
       @post aiDifficulty = 2
       @return a string of the next shot for ai
@@ -111,14 +112,14 @@ class Player
       */
       string randAtoF();
       /**
-      @param integer to be converted
+      @param x - integer to be converted
       @brief takes the number passed in and then returs
       @post this method is used in the aiEasy, aiMedium, aiHard methods
       @return the string value of the interger passed in.
       */
       string NumtoStrAF(int x);
       /**
-      @param integer to be converted
+      @param x - integer to be converted
       @brief takes the number passed in and then returns a string value frome 1-8 for the game board.
       @post this method is used in the aiEasy, aiMedium, aiHard methods
       @return a string that is 1-8
